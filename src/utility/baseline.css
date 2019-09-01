@@ -1,0 +1,14 @@
+@import-normalize;
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
