@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from 'components/Card/Card';
 import { FlatButton } from 'components/Buttons/Buttons';
 import * as Styled from './AppStyles';
 import 'utility/baseline.css';
@@ -18,13 +17,28 @@ const App = () => {
           </Styled.SubTitle>
         </Styled.HeadContent>
       </Styled.Header>
-      <Styled.ContentContainer>
-        <Styled.Flex>
-          <Card title='Buttons'>
-            <FlatButton text='Hover Me' />
-          </Card>
-        </Styled.Flex>
-      </Styled.ContentContainer>
+      <Styled.Section>
+        <h3>Buttons</h3>
+        <Styled.ButtonGrid>
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+        </Styled.ButtonGrid>
+        <Styled.ButtonGrid>
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+          <FlatButton text='Hover Me' />
+        </Styled.ButtonGrid>
+      </Styled.Section>
+      <Styled.Section>
+        <h3>Modals</h3>
+        <Styled.ButtonGrid>
+          <FlatButton text='Modal 1' />
+          <FlatButton text='Modal 2' />
+        </Styled.ButtonGrid>
+      </Styled.Section>
     </React.Fragment>
   );
 

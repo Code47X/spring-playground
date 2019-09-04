@@ -34,15 +34,27 @@ export const SubTitle = styled.h2`
   margin: 0;
 `;
 
-export const ContentContainer = styled.div`
-  width: 92%;
-  max-width: 1400px;
-  margin: auto;
-  padding-top: 100px;
+// Todo: Refactor
+export const Section = styled.section`
+  width: 90%;
+  max-width: 1000px;
+  margin: 100px auto;
+
+  h3:first-child {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 35px;
+  }
 `;
 
-export const Flex = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+// Todo: Refactor
+export const ButtonGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 20px;
+  margin: 20px 0px;
 `;
