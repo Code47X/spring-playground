@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring } from 'react-spring';
-import * as Styled from './ButtonStyles';
+import * as S from './ButtonStyles';
 
 export const FlatButton = ({ text, onClick }) => {
 
@@ -11,14 +11,14 @@ export const FlatButton = ({ text, onClick }) => {
   });
 
   return (
-    <Styled.FlatButton
+    <S.FlatButton
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {text}
-      <Styled.FlatButtonSheen style={sheenAnim} />
-    </Styled.FlatButton>
+      <S.FlatButtonSheen style={sheenAnim} />
+    </S.FlatButton>
   );
 
 };

@@ -1,44 +1,44 @@
 import React from 'react';
 import { FlatButton } from 'components/Buttons/Buttons';
-import * as Styled from './AppStyles';
+import * as S from './AppStyles';
 import 'utility/baseline.css';
 
 const App = () => {
 
   return (
     <React.Fragment>
-      <Styled.Header>
-        <Styled.HeadContent>
-          <Styled.Title>
+      <S.Header>
+        <S.HeadContent>
+          <S.Title>
             React-Spring Playground
-          </Styled.Title>
-          <Styled.SubTitle>
+          </S.Title>
+          <S.SubTitle>
             A place to show off my animated components
-          </Styled.SubTitle>
-        </Styled.HeadContent>
-      </Styled.Header>
-      <Styled.Section>
+          </S.SubTitle>
+        </S.HeadContent>
+      </S.Header>
+      <S.Section>
         <h3>Buttons</h3>
-        <Styled.ButtonGrid>
+        <S.ButtonGrid>
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
-        </Styled.ButtonGrid>
-        <Styled.ButtonGrid>
+        </S.ButtonGrid>
+        <S.ButtonGrid>
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
           <FlatButton text='Hover Me' />
-        </Styled.ButtonGrid>
-      </Styled.Section>
-      <Styled.Section>
+        </S.ButtonGrid>
+      </S.Section>
+      <S.Section>
         <h3>Modals</h3>
-        <Styled.ButtonGrid>
+        <S.ButtonGrid>
           <FlatButton text='Modal 1' />
           <FlatButton text='Modal 2' />
-        </Styled.ButtonGrid>
-      </Styled.Section>
+        </S.ButtonGrid>
+      </S.Section>
     </React.Fragment>
   );
 
