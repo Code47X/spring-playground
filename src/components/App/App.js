@@ -1,39 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FlatButton } from 'components/Buttons/Buttons';
-import * as S from './AppStyles';
+import * as Styled from './AppStyles';
 import 'utility/baseline.css';
 
-const App = () => {
-
-  return (
-    <React.Fragment>
-      <S.Header>
-        <S.HeadContent>
-          <S.Title>
-            React-Spring Playground
-          </S.Title>
-          <S.SubTitle>
-            A place to show off my animated components
-          </S.SubTitle>
-        </S.HeadContent>
-      </S.Header>
-      <S.Section>
-        <h3>Buttons</h3>
-        <S.ButtonGrid>
-          <FlatButton variant='sheen' text='Sheen' />
-          <FlatButton variant='morph' text='Morph' />
-        </S.ButtonGrid>
-      </S.Section>
-      <S.Section>
-        <h3>Modals</h3>
-        <S.ButtonGrid>
-          <FlatButton text='Modal 1' />
-          <FlatButton text='Modal 2' />
-        </S.ButtonGrid>
-      </S.Section>
-    </React.Fragment>
-  );
-
-};
+const App = () => (
+  <Fragment>
+    <Styled.Header>
+      <div>
+        <h1 className='title'>
+          React-Spring Playground
+        </h1>
+        <h2 className='subtitle'>
+          A place to show off my animated components
+        </h2>
+      </div>
+    </Styled.Header>
+    <Styled.Section>
+      <h3 className='title'>
+        Buttons
+      </h3>
+      <div className='button-grid'>
+        <FlatButton variant='sheen' text='Sheen' />
+        <FlatButton variant='morph' text='Morph' />
+      </div>
+    </Styled.Section>
+  </Fragment>
+);
 
 export default App;
