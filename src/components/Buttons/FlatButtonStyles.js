@@ -16,13 +16,18 @@ export const Button = styled.button`
   -webkit-tap-highlight-color: transparent;
 `;
 
-export const FlatButton = styled(Button)`
+const FlatButtonBase = styled(Button)`
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 20px;
   color: white;
   padding: 10px 20px;
   border: 1px solid white;
 `;
+
+export const FlatButton = animated(FlatButtonBase);
 
 export const FlatButtonSheen = styled(animated.div)`
   position: absolute;

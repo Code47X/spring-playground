@@ -20,16 +20,8 @@ const App = () => {
       <S.Section>
         <h3>Buttons</h3>
         <S.ButtonGrid>
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
-        </S.ButtonGrid>
-        <S.ButtonGrid>
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
-          <FlatButton text='Hover Me' />
+          <FlatButton variant='sheen' text='Sheen' />
+          <FlatButton variant='morph' text='Morph' />
         </S.ButtonGrid>
       </S.Section>
       <S.Section>
