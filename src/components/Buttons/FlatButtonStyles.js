@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
-export const Button = styled.button`
-  cursor: pointer;
-  position: relative;
+export const ButtonWrapper = styled.button`
   padding: 0;
-  border: none;
   background: none;
-  overflow: hidden;
+  border: none;
+  cursor: pointer;
 
   :focus {
     outline: none;
@@ -16,20 +14,20 @@ export const Button = styled.button`
   -webkit-tap-highlight-color: transparent;
 `;
 
-const FlatButtonBase = styled(Button)`
-  width: 100%;
+export const FlatButton = styled(animated.div)`
+  position: relative;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: white;
   padding: 10px 20px;
   border: 1px solid white;
+  overflow: hidden;
 `;
 
-export const FlatButton = animated(FlatButtonBase);
-
-export const FlatButtonSheen = styled(animated.div)`
+export const SheenEffect = styled(animated.div)`
+  pointer-events: none;
   position: absolute;
   top: 25%;
   left: -80%;

@@ -20,8 +20,8 @@ const App = () => (
         Buttons
       </h3>
       <div className='button-grid'>
+        <FlatButton variant='default' text='Default' />
         <FlatButton variant='sheen' text='Sheen' />
-        <FlatButton variant='morph' text='Morph' />
       </div>
     </Styled.Section>
   </Fragment>

@@ -1,63 +1,63 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import * as S from './FlatButtonStyles';
+import * as Styled from './FlatButtonStyles';
 
-export const Sheen = ({ text, onClick }) => {
-  const [hovered, setHovered] = useState(false);
-  const [down, setDown] = useState(false);
+// Button Press Hook
+const useButtonPress = () => {
+  const [pressed, setPressed] = useState(false);
 
-  const sheenAnim = useSpring({
-    left: hovered ? '80%' : '-80%',
-    config: { mass: 1, tension: 280, friction: 40 }
-  });
-
-  const clickAnim = useSpring({
-    transform: down ? 'scale(0.96)' : 'scale(1)',
+  const pressedAnim = useSpring({
+    transform: pressed ? 'scale(0.96)' : 'scale(1)',
     config: { mass: 1, tension: 500, friction: 15 }
   });
 
+  return { pressed, setPressed, pressedAnim }
+};
+
+// Default Flat Button
+export const Default = ({ text, onClick }) => {
+  const { setPressed, pressedAnim } = useButtonPress();
+
   return (
-    <S.FlatButton
-      style={clickAnim}
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => { setHovered(false); setDown(false); }}
-      onMouseDown={() => setDown(true)}
-      onMouseUp={() => setDown(false)}
-    >
-      {text}
-      <S.FlatButtonSheen style={sheenAnim} />
-    </S.FlatButton>
+    <Styled.ButtonWrapper>
+      <animated.div style={pressedAnim}>
+        <Styled.FlatButton
+          onClick={onClick}
+          onMouseDown={() => setPressed(true)}
+          onMouseUp={() => setPressed(false)}
+          onMouseLeave={() => setPressed(false)}
+        >
+          {text}
+        </Styled.FlatButton>
+      </animated.div>
+    </Styled.ButtonWrapper>
   );
 };
 
-export const Morph = ({ text, onClick }) => {
+// Sheen Flat Button
+export const Sheen = ({ text, onClick }) => {
+  const { setPressed, pressedAnim } = useButtonPress();
   const [hovered, setHovered] = useState(false);
-  const [down, setDown] = useState(false);
 
-  const clickAnim = useSpring({
-    transform: down ? 'scale(0.96)' : 'scale(1)',
-    config: { mass: 1, tension: 500, friction: 15 }
-  });
-
-  const morphAnim = useSpring({
-    color: hovered ? 'red' : 'white',
-    background: hovered ? 'white' : '#ffffff00',
-    borderRadius: hovered ? '12px' : '0px',
+  const sheenAnim = useSpring({
+    left: hovered ? '80%' : '-80%',
+    config: { mass: 1, tension: 90, friction: 20 }
   });
 
   return (
-    <animated.div style={clickAnim}>
-      <S.FlatButton
-        style={morphAnim}
-        onClick={onClick}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => { setHovered(false); setDown(false); }}
-        onMouseDown={() => setDown(true)}
-        onMouseUp={() => setDown(false)}
-      >
-        {text}
-      </S.FlatButton>
-    </animated.div>
+    <Styled.ButtonWrapper>
+      <animated.div style={pressedAnim}>
+        <Styled.FlatButton
+          onClick={onClick}
+          onMouseDown={() => setPressed(true)}
+          onMouseUp={() => setPressed(false)}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setHovered(false); setPressed(false); }}
+        >
+          {text}
+          <Styled.SheenEffect style={sheenAnim} />
+        </Styled.FlatButton>
+      </animated.div>
+    </Styled.ButtonWrapper>
   );
 };
