@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { FlatButton } from 'components/Buttons/Buttons';
+import Modal from 'components/Modal/Modal';
 import * as Styled from './AppStyles';
 import 'utility/baseline.css';
 
@@ -22,6 +23,16 @@ const App = () => (
       <div className='button-grid'>
         <FlatButton variant='default' text='Default' />
         <FlatButton variant='sheen' text='Sheen' />
+      </div>
+    </Styled.Section>
+    <Styled.Section>
+      <h3 className='title'>
+        Modals
+      </h3>
+      <div className='button-grid'>
+        <Modal>
+          <FlatButton variant='sheen' text='Modal' />
+        </Modal>
       </div>
     </Styled.Section>
   </Fragment>
