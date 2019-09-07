@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { FlatButton } from 'components/Buttons/Buttons';
 import Modal from 'components/Modal/Modal';
 import * as Styled from './AppStyles';
 import 'utility/baseline.css';
 
 const App = () => (
-  <Fragment>
+  <>
     <Styled.Header>
       <div>
         <h1 className='title'>
@@ -35,7 +35,7 @@ const App = () => (
         </Modal>
       </div>
     </Styled.Section>
-  </Fragment>
+  </>
 );
 
 export default App;
