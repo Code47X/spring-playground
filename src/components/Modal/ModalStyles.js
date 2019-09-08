@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
-export const Modal = styled.div`
+export const Modal = styled(animated.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +13,32 @@ export const Modal = styled.div`
 `;
 
 export const ModalCard = styled(animated.div)`
-    background: white;
-    border-radius: 15px;
+    overflow: hidden;
+    border-radius: 5px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    padding: 20px;
     width: 100%;
     max-width: 400px;
-    text-align: center;
+
+    .modal-title {
+      width: 100%;
+      background: #2e8ca5;
+      padding: 10px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .modal-body {
+      width: 100%;
+      height: 100px;
+      background: white;
+      padding: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      color: black;
+    }
 `;

@@ -7,33 +7,63 @@ const Portal = ({ children }) => (
   ReactDOM.createPortal(children, document.getElementById('modal-portal'))
 );
 
-const Modal = ({ animation, closeModal }) => (
-  <Styled.Modal onClick={closeModal}>
-    <Styled.ModalCard style={animation}>
-      <h1>I'm a Modal</h1>
+const Modal = ({ modalAnim, closeModal }) => (
+  <Styled.Modal
+    onClick={closeModal}
+    style={{ background: modalAnim.bgA.to((bgA) => `rgba(0, 0, 0, ${bgA})`) }}
+  >
+    <Styled.ModalCard style={modalAnim}>
+      <div className='modal-title'>
+        Modal Title
+      </div>
+      <div className='modal-body'>
+        Modal body
+      </div>
     </Styled.ModalCard>
   </Styled.Modal>
 );
 
 const ModalWrapper = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const openModal = () => setOpen(true);
+  const closeModal = () => setOpen(false);
 
-  const transition = useTransition(open, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+  const transition = useTransition(open ? [1] : [], null, {
+    from: {
+      bgA: 0,
+      opacity: 0,
+      transform: 'translate3d(0, 50%, 0)'
+    },
+    enter: {
+      bgA: 0.5,
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+      config: (key) => ({
+        duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
+        friction: 12
+      })
+    },
+    leave: {
+      bgA: 0,
+      opacity: 0,
+      transform: 'translate3d(0, 0, 0)',
+      config: (key) => ({
+        duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
+        friction: 12
+      })
+    }
   });
 
   return (
     <>
       {transition.map(
-        ({ item, key, props: animation }) =>
-          item &&
+        ({ item, key, props: modalAnim }) =>
           <Portal key={key}>
-            <Modal animation={animation} closeModal={() => setOpen(false)} />
+            <Modal modalAnim={modalAnim} closeModal={closeModal} />
           </Portal>
       )}
-      {React.cloneElement(children, { onClick: () => setOpen(true) })}
+
+      {React.cloneElement(children, { onClick: openModal })}
     </>
   );
 };
