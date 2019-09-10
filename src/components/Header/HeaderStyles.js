@@ -15,7 +15,7 @@ export const Header = styled.div`
 export const Content = styled.div`
     position: relative;
     top: -5%;
-    padding: 0px 20px;
+    width: 90%;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
@@ -23,10 +23,14 @@ export const Content = styled.div`
 
     @media ${device.sm} {
       font-size: 3rem;
+      width: 85%;
+      max-width: 582px;
     }
 
     @media ${device.lg} {
       font-size: 4rem;
+      width: 80%;
+      max-width: 1000px;
     }
 
     h1 {
