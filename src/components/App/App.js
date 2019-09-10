@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from 'components/Header/Header';
 import { FlatButton } from 'components/Buttons/Buttons';
 import Modal from 'components/Modal/Modal';
 import * as Styled from './AppStyles';
@@ -6,16 +7,7 @@ import 'utility/baseline.css';
 
 const App = () => (
   <>
-    <Styled.Header>
-      <div>
-        <h1 className='title'>
-          React-Spring Playground
-        </h1>
-        <h2 className='subtitle'>
-          A place to show off my animated components
-        </h2>
-      </div>
-    </Styled.Header>
+    <Header />
     <Styled.Section>
       <h3 className='title'>
         Buttons
