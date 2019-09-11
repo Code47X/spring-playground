@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from 'utility/breakpoints';
 
 export const Card = styled.div`
-  width: 330px;
+  width: 90%;
   margin: 150px auto;
   padding: 50px;
   background: white;

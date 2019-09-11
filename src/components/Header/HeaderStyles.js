@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as waveSvg } from 'svg/wave.svg';
+import { ReactComponent as waveLoopSvg } from 'svg/wave-loop.svg';
 import { device } from 'utility/breakpoints';
 
 export const Header = styled.div`
@@ -10,11 +10,12 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
   background: linear-gradient(156.18deg, #A521E3 27.38%, rgba(227, 80, 33, 0.69) 81.43%);
+  overflow: hidden;
 `;
 
 export const Content = styled.div`
     position: relative;
-    top: -5%;
+    top: -10%;
     width: 90%;
 
     font-family: 'Montserrat', sans-serif;
@@ -52,13 +53,17 @@ export const Content = styled.div`
     }
 `;
 
-export const WaveSvg = styled(waveSvg)`
+export const WaveLoopSvg = styled(waveLoopSvg)`
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100px;
+  width: 200%;
+  height: 60px;
   fill: #8F98E5;
+
+  @media ${device.sm} {
+    height: 100px;
+  }
 
   @media ${device.lg} {
     height: 161px;
