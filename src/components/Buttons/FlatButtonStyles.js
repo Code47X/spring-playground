@@ -20,9 +20,9 @@ export const FlatButton = styled(animated.div)`
   font-style: normal;
   font-weight: bold;
   font-size: 1.25rem;
-  color: white;
+  color: purple;
   padding: 10px 20px;
-  border: 1px solid white;
+  border: 1px solid purple;
   overflow: hidden;
 `;
 

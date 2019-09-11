@@ -58,7 +58,7 @@ export const WaveSvg = styled(waveSvg)`
   left: 0;
   width: 100%;
   height: 100px;
-  fill: grey;
+  fill: #8F98E5;
 
   @media ${device.lg} {
     height: 161px;
