@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
+import { ReactComponent as circleSvg } from 'svg/circle.svg';
 
 export const ButtonWrapper = styled.button`
   padding: 0;
@@ -26,13 +27,32 @@ export const FlatButton = styled(animated.div)`
   overflow: hidden;
 `;
 
-export const SheenEffect = styled(animated.div)`
-  pointer-events: none;
-  position: absolute;
-  top: 25%;
-  left: -80%;
+export const BarEffectTop = styled(animated.div)`
   width: 100%;
   height: 50%;
-  background: #a7a7a78c;
-  transform: rotateZ(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #8000806b;
+`;
+
+export const BarEffectBot = styled(animated.div)`
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #8000806b;
+`;
+
+export const CircleSvg = styled(circleSvg)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: -1;
+  fill: #8000806b;
 `;

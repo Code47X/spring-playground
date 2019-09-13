@@ -13,18 +13,18 @@ const App = () => (
       <Card title='Buttons'>
         <div className='button-grid'>
           <FlatButton variant='default' text='Default' />
-          <FlatButton variant='sheen' text='Sheen' />
-          <FlatButton variant='sheen' text='Sheen' />
-          <FlatButton variant='sheen' text='Sheen' />
+          <FlatButton variant='bars' text='Bars' />
+          <FlatButton variant='circle' text='Circle' />
+          <FlatButton variant='circle' text='Circle' />
         </div>
       </Card>
       <Card title='Modals'>
         <div className='button-grid'>
           <Modal>
-            <FlatButton variant='sheen' text='Notify' />
+            <FlatButton variant='circle' text='Notify' />
           </Modal>
           <Modal>
-            <FlatButton variant='sheen' text='Alert' />
+            <FlatButton variant='circle' text='Alert' />
           </Modal>
         </div>
       </Card>

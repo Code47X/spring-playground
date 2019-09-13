@@ -34,20 +34,23 @@ export const Default = ({ text, onClick }) => {
   );
 };
 
-// Sheen Flat Button
-export const Sheen = ({ text, onClick }) => {
+// Bars Flat Button
+export const Bars = ({ text, onClick }) => {
   const { setPressed, pressedAnim } = useButtonPress();
   const [hovered, setHovered] = useState(false);
 
-  const sheenAnim = useSpring({
-    left: hovered ? '80%' : '-80%',
-    config: { mass: 1, tension: 90, friction: 20 }
+  const { color, topTransform, botTransform } = useSpring({
+    color: hovered ? 'white' : 'purple',
+    topTransform: hovered ? 'translate3d(0, 0, 0)' : 'translate3d(-100%, 0, 0)',
+    botTransform: hovered ? 'translate3d(0, 0, 0)' : 'translate3d(100%, 0, 0)',
+    config: { tension: 180, clamp: true }
   });
 
   return (
     <Styled.ButtonWrapper>
       <animated.div style={pressedAnim}>
         <Styled.FlatButton
+          style={{ color }}
           onClick={onClick}
           onMouseDown={() => setPressed(true)}
           onMouseUp={() => setPressed(false)}
@@ -55,7 +58,40 @@ export const Sheen = ({ text, onClick }) => {
           onMouseLeave={() => { setHovered(false); setPressed(false); }}
         >
           {text}
-          <Styled.SheenEffect style={sheenAnim} />
+          <Styled.BarEffectTop style={{ transform: topTransform }} />
+          <Styled.BarEffectBot style={{ transform: botTransform }} />
+        </Styled.FlatButton>
+      </animated.div>
+    </Styled.ButtonWrapper>
+  );
+};
+
+// Circle Flat Button
+export const Circle = ({ text, onClick }) => {
+  const { setPressed, pressedAnim } = useButtonPress();
+  const [hovered, setHovered] = useState(false);
+
+  const { color, width } = useSpring({
+    color: hovered ? 'white' : 'purple',
+    width: hovered ? '110%' : '0%',
+    config: { tension: 180, clamp: true }
+  });
+
+  const CircleEffect = animated(Styled.CircleSvg);
+
+  return (
+    <Styled.ButtonWrapper>
+      <animated.div style={pressedAnim}>
+        <Styled.FlatButton
+          style={{ color }}
+          onClick={onClick}
+          onMouseDown={() => setPressed(true)}
+          onMouseUp={() => setPressed(false)}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setHovered(false); setPressed(false); }}
+        >
+          {text}
+          <CircleEffect style={{ width }} />
         </Styled.FlatButton>
       </animated.div>
     </Styled.ButtonWrapper>
