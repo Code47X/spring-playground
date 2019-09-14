@@ -17,15 +17,24 @@ const useButtonPress = () => {
 // Default Flat Button
 export const Default = ({ text, onClick }) => {
   const { setPressed, pressedAnim } = useButtonPress();
+  const [hovered, setHovered] = useState(false);
+
+  const defaultAnim = useSpring({
+    color: hovered ? 'white' : 'purple',
+    background: hovered ? '#8000806b' : '#ffffff00',
+    config: { tension: 180, clamp: true }
+  })
 
   return (
     <Styled.ButtonWrapper>
       <animated.div style={pressedAnim}>
         <Styled.FlatButton
+          style={defaultAnim}
           onClick={onClick}
           onMouseDown={() => setPressed(true)}
           onMouseUp={() => setPressed(false)}
-          onMouseLeave={() => setPressed(false)}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setHovered(false); setPressed(false); }}
         >
           {text}
         </Styled.FlatButton>
