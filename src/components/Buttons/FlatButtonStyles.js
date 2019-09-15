@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 import { ReactComponent as circleSvg } from 'svg/circle.svg';
+import { ReactComponent as sliceLeftSvg } from 'svg/slice-left.svg';
+import { ReactComponent as sliceRightSvg } from 'svg/slice-right.svg';
 
 export const ButtonWrapper = styled.button`
   padding: 0;
@@ -34,7 +36,7 @@ export const BarEffectTop = styled(animated.div)`
   top: 0;
   left: 0;
   z-index: -1;
-  background: #8000806b;
+  background: purple;
 `;
 
 export const BarEffectBot = styled(animated.div)`
@@ -44,7 +46,7 @@ export const BarEffectBot = styled(animated.div)`
   bottom: 0;
   right: 0;
   z-index: -1;
-  background: #8000806b;
+  background: purple;
 `;
 
 export const CircleSvg = styled(circleSvg)`
@@ -54,5 +56,25 @@ export const CircleSvg = styled(circleSvg)`
   width: 0%;
   transform: translate3d(-50%, -50%, 0);
   z-index: -1;
-  fill: #8000806b;
+  fill: purple;
+`;
+
+export const SliceLeftSvg = styled(sliceLeftSvg)`
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 61%;
+  height: 100%;
+  z-index: -1;
+  fill: purple;
+`;
+
+export const SliceRightSvg = styled(sliceRightSvg)`
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 61%;
+  height: 100%;
+  z-index: -1;
+  fill: purple;
 `;

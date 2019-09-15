@@ -7,6 +7,8 @@ export const FlatButton = ({ text, onClick, variant }) => {
       return <FlatButtons.Bars text={text} onClick={onClick} />
     case 'circle':
       return <FlatButtons.Circle text={text} onClick={onClick} />
+    case 'slice':
+      return <FlatButtons.Slice text={text} onClick={onClick} />
     default:
       return <FlatButtons.Default text={text} onClick={onClick} />
   };

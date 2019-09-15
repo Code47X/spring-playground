@@ -21,7 +21,7 @@ export const Default = ({ text, onClick }) => {
 
   const defaultAnim = useSpring({
     color: hovered ? 'white' : 'purple',
-    background: hovered ? '#8000806b' : '#ffffff00',
+    background: hovered ? 'purple' : '#ffffff00',
     config: { tension: 180, clamp: true }
   })
 
@@ -101,6 +101,41 @@ export const Circle = ({ text, onClick }) => {
         >
           {text}
           <CircleEffect style={{ width }} />
+        </Styled.FlatButton>
+      </animated.div>
+    </Styled.ButtonWrapper>
+  );
+};
+
+// Slice Flat Button
+export const Slice = ({ text, onClick }) => {
+  const { setPressed, pressedAnim } = useButtonPress();
+  const [hovered, setHovered] = useState(false);
+
+  const { color, sliceLeft, sliceRight } = useSpring({
+    color: hovered ? 'white' : 'purple',
+    sliceLeft: hovered ? 'translate3d(0%, 0, 0)' : 'translate3d(-100%, 0, 0)',
+    sliceRight: hovered ? 'translate3d(0%, 0, 0)' : 'translate3d(100%, 0, 0)',
+    config: { tension: 180, clamp: true }
+  });
+
+  const SliceLeftEffect = animated(Styled.SliceLeftSvg);
+  const SliceRightEffect = animated(Styled.SliceRightSvg);
+
+  return (
+    <Styled.ButtonWrapper>
+      <animated.div style={pressedAnim}>
+        <Styled.FlatButton
+          style={{ color }}
+          onClick={onClick}
+          onMouseDown={() => setPressed(true)}
+          onMouseUp={() => setPressed(false)}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setHovered(false); setPressed(false); }}
+        >
+          {text}
+          <SliceLeftEffect style={{ transform: sliceLeft }} />
+          <SliceRightEffect style={{ transform: sliceRight }} />
         </Styled.FlatButton>
       </animated.div>
     </Styled.ButtonWrapper>

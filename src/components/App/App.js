@@ -15,7 +15,7 @@ const App = () => (
           <FlatButton variant='default' text='Default' />
           <FlatButton variant='bars' text='Bars' />
           <FlatButton variant='circle' text='Circle' />
-          <FlatButton variant='circle' text='Circle' />
+          <FlatButton variant='slice' text='Slice' />
         </div>
       </Card>
       <Card title='Modals'>
