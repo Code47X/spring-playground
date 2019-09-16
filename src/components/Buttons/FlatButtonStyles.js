@@ -19,7 +19,7 @@ export const ButtonWrapper = styled.button`
 
 export const FlatButton = styled(animated.div)`
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  font-family: ${props => props.theme.fonts.primary};
   font-style: normal;
   font-weight: bold;
   font-size: 1.25rem;

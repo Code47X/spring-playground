@@ -23,7 +23,7 @@ export const ModalCard = styled(animated.div)`
       width: 100%;
       background: #2e8ca5;
       padding: 10px 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: ${props => props.theme.fonts.primary};
       font-style: normal;
       font-weight: normal;
       font-size: 2rem;
@@ -35,7 +35,7 @@ export const ModalCard = styled(animated.div)`
       height: 100px;
       background: white;
       padding: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: ${props => props.theme.fonts.primary};
       font-style: normal;
       font-weight: normal;
       font-size: 1rem;

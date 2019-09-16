@@ -18,7 +18,7 @@ export const Content = styled.div`
     top: -10%;
     width: 90%;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${props => props.theme.fonts.primary};
     font-size: 2.5rem;
     color: white;
 

@@ -19,7 +19,7 @@ export const Card = styled.div`
 
   .card-title {
     color: purple;
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${props => props.theme.fonts.primary};
     font-style: normal;
     font-weight: bold;
     font-size: 2.5rem;
