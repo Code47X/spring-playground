@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useTransition } from 'react-spring';
+import { ModalButton } from 'components/Buttons/Buttons';
 import * as Styled from './ModalStyles';
 
 const Portal = ({ children }) => (
@@ -9,7 +10,6 @@ const Portal = ({ children }) => (
 
 const Modal = ({ modalAnim, closeModal, pointerEvents }) => (
   <Styled.Modal
-    onClick={closeModal}
     style={{
       pointerEvents,
       background: modalAnim.bgA.to((bgA) => `rgba(0, 0, 0, ${bgA})`)
@@ -21,6 +21,10 @@ const Modal = ({ modalAnim, closeModal, pointerEvents }) => (
       </div>
       <div className='modal-body'>
         Modal body
+      </div>
+      <div className='modal-footer'>
+        <ModalButton variant='cancel' text='Cancel' onClick={closeModal} />
+        <ModalButton variant='confirm' text='Confirm' onClick={closeModal} />
       </div>
     </Styled.ModalCard>
   </Styled.Modal>

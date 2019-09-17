@@ -31,14 +31,34 @@ export const ModalCard = styled(animated.div)`
     }
 
     .modal-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      height: 100px;
+      height: 150px;
       background: white;
       padding: 20px;
       font-family: ${props => props.theme.fonts.primary};
       font-style: normal;
       font-weight: normal;
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: black;
+    }
+
+    .modal-footer {
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background: #e2e2e2;
+
+      .modal-button {
+        margin-right: 10px;
+      }
+
+      .modal-button:last-child {
+        margin: 0;
+      }
     }
 `;
