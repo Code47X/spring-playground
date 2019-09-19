@@ -40,12 +40,12 @@ const ModalWrapper = ({ children }) => {
     from: {
       bgA: 0,
       opacity: 0,
-      transform: 'translate3d(0, 50%, 0)'
+      transform: 'translate3d(0, -25%, 0)'
     },
     enter: {
       bgA: 0.5,
       opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
+      transform: 'translate3d(0, 0%, 0)',
       config: (key) => ({
         duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
         friction: 12
@@ -54,10 +54,10 @@ const ModalWrapper = ({ children }) => {
     leave: {
       bgA: 0,
       opacity: 0,
-      transform: 'translate3d(0, 0, 0)',
+      transform: 'translate3d(0, -25%, 0)',
       config: (key) => ({
         duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
-        friction: 12
+        friction: 15
       })
     },
     unique: true
