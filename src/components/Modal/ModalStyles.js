@@ -31,13 +31,10 @@ export const ModalCard = styled(animated.div)`
     }
 
     .modal-body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       width: 100%;
       height: 150px;
       background: white;
-      padding: 20px;
+      padding: 30px 20px;
       font-family: ${props => props.theme.fonts.primary};
       font-style: normal;
       font-weight: normal;
