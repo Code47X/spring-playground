@@ -30,7 +30,7 @@ const Modal = ({ modalAnim, closeModal, pointerEvents }) => (
   </Styled.Modal>
 );
 
-const ModalWrapper = ({ children }) => {
+const ModalWrapper = ({ alert, children }) => {
   const [open, setOpen] = useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
@@ -40,12 +40,12 @@ const ModalWrapper = ({ children }) => {
     from: {
       bgA: 0,
       opacity: 0,
-      transform: 'translate3d(0, -25%, 0)'
+      transform: alert ? 'scale(0, 0)' : 'translate3d(0, -25%, 0)'
     },
     enter: {
       bgA: 0.5,
       opacity: 1,
-      transform: 'translate3d(0, 0%, 0)',
+      transform: alert ? 'scale(1, 1)' : 'translate3d(0, 0%, 0)',
       config: (key) => ({
         duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
         friction: 12
@@ -54,8 +54,9 @@ const ModalWrapper = ({ children }) => {
     leave: {
       bgA: 0,
       opacity: 0,
-      transform: 'translate3d(0, -25%, 0)',
+      transform: alert ? 'scale(0, 0)' : 'translate3d(0, -25%, 0)',
       config: (key) => ({
+        clamp: (key === 'transform' && alert) ? true : false,
         duration: key === 'bgA' ? 300 : key === 'opacity' ? 500 : undefined,
         friction: 15
       })

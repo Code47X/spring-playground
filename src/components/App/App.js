@@ -26,7 +26,7 @@ const App = () => (
             <Modal>
               <FlatButton variant='circle' text='Notify' />
             </Modal>
-            <Modal>
+            <Modal alert>
               <FlatButton variant='circle' text='Alert' />
             </Modal>
           </div>
